@@ -106,5 +106,91 @@ class ListaVaciaError(Exception):
     """Excepción personalizada para listas vacías."""
     pass
 
+# EJERCICIO 11
+# Escribe un programa que pida al usuario que introduzca su edad.
+# Si el usuario ingresa un valor no numérico o un valor fuera del
+# rango esperado (por ejemplo, menor que 0 o mayor que 120),
+# maneja las excepciones adecuadamente.
+
+def validar_edad():
+    pass
+
+
+# EJERCICIO 12
+# Genera una función que, al recibir una frase, devuelva una
+# lista con la longitud de cada palabra. Usa la función map().
+
+def longitud_palabras(frase):
+    pass
+
+
+# EJERCICIO 13
+# Genera una función que, para un conjunto de caracteres,
+# devuelva una lista de tuplas con cada letra en mayúsculas
+# y minúsculas. Las letras no pueden estar repetidas.
+# Usa la función map().
+
+def letras_mayus_minus(caracteres):
+    pass
+
+
+# EJERCICIO 14
+# Crea una función que retorne las palabras de una lista que
+# comiencen con una letra en específico. Usa la función filter().
+
+def palabras_por_letra(lista_palabras, letra):
+    pass
+
+
+# EJERCICIO 15
+# Crea una función lambda que sume 3 a cada número de una lista dada.
+
+sumar_tres = lambda lista: None
+
+
+# EJERCICIO 16
+# Escribe una función que tome una cadena de texto y un número
+# entero n como parámetros y devuelva una lista de todas las
+# palabras que sean más largas que n. Usa la función filter().
+
+def palabras_mas_largas_que(texto, n):
+    pass
+
+
+# EJERCICIO 17
+# Crea una función que tome una lista de dígitos y devuelva el
+# número correspondiente. Por ejemplo, [5,7,2] corresponde al
+# número 572. Usa la función reduce().
+
+def digitos_a_numero(lista_digitos):
+    pass
+
+
+# EJERCICIO 18
+# Escribe un programa en Python que cree una lista de diccionarios
+# con información de estudiantes (nombre, edad, calificación) y use
+# filter para extraer a los estudiantes con una calificación mayor
+# o igual a 90.
+
+def estudiantes_destacados(estudiantes):
+    pass
+
+
+# EJERCICIO 19
+# Crea una función lambda que filtre los números impares
+# de una lista dada.
+
+filtrar_impares = lambda lista: None
+
+
+# EJERCICIO 20
+# Para una lista con elementos de tipo integer y string,
+# obtén una nueva lista solo con los valores int.
+# Usa la función filter().
+
+def solo_enteros(lista_mixta):
+    pass
+
+
 if __name__ == "__main__":
-    print("Hola Antonio.")
+    print("Hola Antonio")
