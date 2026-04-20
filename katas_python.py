@@ -134,16 +134,23 @@ def calcular_promedio(lista_numeros):
 # maneja las excepciones adecuadamente.
 
 def validar_edad():
-    pass
+    try:
+        edad = int(input("Introduce tu edad: "))
 
+        if edad < 0 or edad > 120:
+            raise ValueError("La edad debe estar entre 0 y 120.")
+
+        print(f"Edad válida: {edad}")
+    except ValueError as error:
+        print(f"Error: {error}")
 
 # EJERCICIO 12
 # Genera una función que, al recibir una frase, devuelva una
 # lista con la longitud de cada palabra. Usa la función map().
 
 def longitud_palabras(frase):
-    pass
-
+    palabras = frase.split()
+    return list(map(len, palabras))
 
 # EJERCICIO 13
 # Genera una función que, para un conjunto de caracteres,
@@ -152,22 +159,21 @@ def longitud_palabras(frase):
 # Usa la función map().
 
 def letras_mayus_minus(caracteres):
-    pass
-
+    letras_unicas = list(set(caracteres))
+    return list(map(lambda letra: (letra.upper(), letra.lower()), letras_unicas))
 
 # EJERCICIO 14
 # Crea una función que retorne las palabras de una lista que
 # comiencen con una letra en específico. Usa la función filter().
 
 def palabras_por_letra(lista_palabras, letra):
-    pass
-
+    letra = letra.lower()
+    return list(filter(lambda palabra: palabra.lower().startswith(letra), lista_palabras))
 
 # EJERCICIO 15
 # Crea una función lambda que sume 3 a cada número de una lista dada.
 
-sumar_tres = lambda lista: None
-
+sumar_tres = lambda lista: list(map(lambda numero: numero + 3, lista))
 
 # EJERCICIO 16
 # Escribe una función que tome una cadena de texto y un número
@@ -221,8 +227,13 @@ if __name__ == "__main__":
     print("#5", calcular_media_y_estado([6, 7, 8]))
     print("#6", factorial_recursivo(5))
     print("#7", tuplas_a_strings([(1, 2), ("hola", "mundo"), ("Python", 3)]))
-    print("#8 listo para probar con input manual")
+    print("#8 listo para probar con input manual(arreglar cuanto tenga la mitad hechos)")
     print("#9", filtrar_mascotas_permitidas(["Perro", "Mapache", "Gato", "Oso", "Loro"]))
+    print("#11 listo para probar con input manual")
+    print("#12", longitud_palabras("Hola mundo desde Python"))
+    print("#13", letras_mayus_minus("abracadabra"))
+    print("#14", palabras_por_letra(["casa", "coche", "perro", "camino"], "c"))
+    print("#15", sumar_tres([1, 2, 3, 4]))
 
     try:
         print("#10", calcular_promedio([5, 10, 15]))
