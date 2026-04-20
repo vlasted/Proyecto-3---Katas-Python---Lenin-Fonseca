@@ -15,16 +15,23 @@ from functools import reduce
 # de cada letra en la cadena. Los espacios no deben ser considerados.
 
 def frecuencia_letras(texto):
-    pass
+    frecuencias = {}
+    texto_limpio = texto.replace(" ", "").lower()
 
+    for letra in texto_limpio:
+        if letra in frecuencias:
+            frecuencias[letra] += 1
+        else:
+            frecuencias[letra] = 1
+
+    return frecuencias
 
 # EJERCICIO 2
 # Dada una lista de números, obtén una nueva lista con el
 # doble de cada valor. Usa la función map().
 
 def doblar_valores(lista):
-    pass
-
+    return list(map(lambda numero: numero * 2, lista))
 
 # EJERCICIO 3
 # Escribe una función que tome una lista de palabras y una
@@ -33,16 +40,17 @@ def doblar_valores(lista):
 # contengan la palabra objetivo.
 
 def buscar_palabras(lista_palabras, objetivo):
-    pass
-
+    objetivo = objetivo.lower()
+    return [palabra for palabra in lista_palabras if objetivo in palabra.lower()]
 
 # EJERCICIO 4
 # Genera una función que calcule la diferencia entre los
 # valores de dos listas. Usa la función map().
 
 def diferencia_listas(lista1, lista2):
-    pass
-
+    if len(lista1) != len(lista2):
+        raise ValueError("Las dos listas deben tener la misma longitud.")
+    return list(map(lambda x, y: x - y, lista1, lista2))
 
 # EJERCICIO 5
 # Escribe una función que tome una lista de números como
@@ -51,24 +59,30 @@ def diferencia_listas(lista1, lista2):
 # con la media y el estado.
 
 def calcular_media_y_estado(lista_numeros, nota_aprobado=5):
-    pass
+    if len(lista_numeros) == 0:
+        return (0, "suspenso")
 
+    media = sum(lista_numeros) / len(lista_numeros)
+    estado = "aprobado" if media >= nota_aprobado else "suspenso"
+    return (media, estado)
 
 # EJERCICIO 6
 # Escribe una función que calcule el factorial de un número
 # de manera recursiva.
 
 def factorial_recursivo(numero):
-    pass
-
+    if numero < 0:
+        raise ValueError("El factorial no está definido para números negativos.")
+    if numero == 0 or numero == 1:
+        return 1
+    return numero * factorial_recursivo(numero - 1)
 
 # EJERCICIO 7
 # Genera una función que convierta una lista de tuplas a una
 # lista de strings. Usa la función map().
 
 def tuplas_a_strings(lista_tuplas):
-    pass
-
+    return list(map(lambda tupla: " ".join(map(str, tupla)), lista_tuplas))
 
 # EJERCICIO 8
 # Escribe un programa que pida al usuario dos números e intente dividirlos.
@@ -77,8 +91,15 @@ def tuplas_a_strings(lista_tuplas):
 # indicando si la división fue exitosa o no.
 
 def dividir_con_excepciones():
-    pass
-
+    try:
+        numero1 = float(input("Introduce el primer número: "))
+        numero2 = float(input("Introduce el segundo número: "))
+        resultado = numero1 / numero2
+        print(f"La división fue exitosa. Resultado: {resultado}")
+    except ValueError:
+        print("Error: debes introducir valores numéricos.")
+    except ZeroDivisionError:
+        print("Error: no se puede dividir entre cero.")
 
 # EJERCICIO 9
 # Escribe una función que tome una lista de nombres de mascotas
@@ -89,22 +110,22 @@ def dividir_con_excepciones():
 # Usa la función filter().
 
 def filtrar_mascotas_permitidas(lista_mascotas):
-    pass
-
+    prohibidas = ["Mapache", "Tigre", "Serpiente Pitón", "Cocodrilo", "Oso"]
+    return list(filter(lambda mascota: mascota not in prohibidas, lista_mascotas))
 
 # EJERCICIO 10
 # Escribe una función que reciba una lista de números y calcule su promedio.
 # Si la lista está vacía, lanza una excepción personalizada y maneja
 # el error adecuadamente.
 
-def calcular_promedio(lista_numeros):
-    pass
-
-# EXCEPCIÓN PERSONALIZADA
-
 class ListaVaciaError(Exception):
-    """Excepción personalizada para listas vacías."""
     pass
+
+def calcular_promedio(lista_numeros):
+    if len(lista_numeros) == 0:
+        raise ListaVaciaError("La lista está vacía.")
+
+    return sum(lista_numeros) / len(lista_numeros)
 
 # EJERCICIO 11
 # Escribe un programa que pida al usuario que introduzca su edad.
@@ -193,4 +214,17 @@ def solo_enteros(lista_mixta):
 
 
 if __name__ == "__main__":
-    print("Hola Antonio")
+    print("#1", frecuencia_letras("Hola mundo"))
+    print("#2", doblar_valores([1, 2, 3, 4]))
+    print("#3", buscar_palabras(["casa", "casco", "perro", "casual"], "cas"))
+    print("#4", diferencia_listas([10, 20, 30], [1, 2, 3]))
+    print("#5", calcular_media_y_estado([6, 7, 8]))
+    print("#6", factorial_recursivo(5))
+    print("#7", tuplas_a_strings([(1, 2), ("hola", "mundo"), ("Python", 3)]))
+    print("#8 listo para probar con input manual")
+    print("#9", filtrar_mascotas_permitidas(["Perro", "Mapache", "Gato", "Oso", "Loro"]))
+
+    try:
+        print("#10", calcular_promedio([5, 10, 15]))
+    except ListaVaciaError as error:
+        print("#10", error)
