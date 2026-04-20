@@ -54,71 +54,57 @@ def calcular_media_y_estado(lista_numeros, nota_aprobado=5):
     pass
 
 
+# EJERCICIO 6
+# Escribe una función que calcule el factorial de un número
+# de manera recursiva.
+
+def factorial_recursivo(numero):
+    pass
+
+
+# EJERCICIO 7
+# Genera una función que convierta una lista de tuplas a una
+# lista de strings. Usa la función map().
+
+def tuplas_a_strings(lista_tuplas):
+    pass
+
+
+# EJERCICIO 8
+# Escribe un programa que pida al usuario dos números e intente dividirlos.
+# Si el usuario ingresa un valor no numérico o intenta dividir por cero,
+# maneja esas excepciones de manera adecuada y muestra un mensaje
+# indicando si la división fue exitosa o no.
+
+def dividir_con_excepciones():
+    pass
+
+
+# EJERCICIO 9
+# Escribe una función que tome una lista de nombres de mascotas
+# como parámetro y devuelva una nueva lista excluyendo ciertas
+# mascotas prohibidas en España.
+# La lista de mascotas a excluir es:
+# ["Mapache", "Tigre", "Serpiente Pitón", "Cocodrilo", "Oso"]
+# Usa la función filter().
+
+def filtrar_mascotas_permitidas(lista_mascotas):
+    pass
+
+
+# EJERCICIO 10
+# Escribe una función que reciba una lista de números y calcule su promedio.
+# Si la lista está vacía, lanza una excepción personalizada y maneja
+# el error adecuadamente.
+
+def calcular_promedio(lista_numeros):
+    pass
+
 # EXCEPCIÓN PERSONALIZADA
 
 class ListaVaciaError(Exception):
     """Excepción personalizada para listas vacías."""
     pass
 
-
-# CLASE ÁRBOL
-
-class Arbol:
-    def __init__(self):
-        self.tronco = 1
-        self.ramas = []
-
-    def crecer_tronco(self):
-        pass
-
-    def nueva_rama(self):
-        pass
-
-    def crecer_ramas(self):
-        pass
-
-    def quitar_rama(self, posicion):
-        pass
-
-    def info_arbol(self):
-        pass
-
-
-# CLASE USUARIOBANCO
-
-class UsuarioBanco:
-    def __init__(self, nombre, saldo, cuenta_corriente):
-        self.nombre = nombre
-        self.saldo = saldo
-        self.cuenta_corriente = cuenta_corriente
-
-    def retirar_dinero(self, cantidad):
-        pass
-
-    def transferir_dinero(self, otro_usuario, cantidad):
-        pass
-
-    def agregar_dinero(self, cantidad):
-        pass
-
-
-# FUNCIÓN PROCESAR TEXTO
-
-def contar_palabras(texto):
-    pass
-
-
-def reemplazar_palabras(texto, palabra_original, palabra_nueva):
-    pass
-
-
-def eliminar_palabra(texto, palabra):
-    pass
-
-
-def procesar_texto(texto, opcion, *args):
-    pass
-
-
 if __name__ == "__main__":
-    print("Base del Proyecto 3 preparada correctamente.")
+    print("Hola Antonio.")
