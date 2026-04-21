@@ -181,8 +181,8 @@ sumar_tres = lambda lista: list(map(lambda numero: numero + 3, lista))
 # palabras que sean más largas que n. Usa la función filter().
 
 def palabras_mas_largas_que(texto, n):
-    pass
-
+    palabras = texto.split()
+    return list(filter(lambda palabra: len(palabra) > n, palabras))
 
 # EJERCICIO 17
 # Crea una función que tome una lista de dígitos y devuelva el
@@ -190,8 +190,7 @@ def palabras_mas_largas_que(texto, n):
 # número 572. Usa la función reduce().
 
 def digitos_a_numero(lista_digitos):
-    pass
-
+    return reduce(lambda acumulado, digito: acumulado * 10 + digito, lista_digitos, 0)
 
 # EJERCICIO 18
 # Escribe un programa en Python que cree una lista de diccionarios
@@ -200,15 +199,13 @@ def digitos_a_numero(lista_digitos):
 # o igual a 90.
 
 def estudiantes_destacados(estudiantes):
-    pass
-
+    return list(filter(lambda estudiante: estudiante["calificacion"] >= 90, estudiantes))
 
 # EJERCICIO 19
 # Crea una función lambda que filtre los números impares
 # de una lista dada.
 
-filtrar_impares = lambda lista: None
-
+filtrar_impares = lambda lista: list(filter(lambda numero: numero % 2 != 0, lista))
 
 # EJERCICIO 20
 # Para una lista con elementos de tipo integer y string,
@@ -216,8 +213,7 @@ filtrar_impares = lambda lista: None
 # Usa la función filter().
 
 def solo_enteros(lista_mixta):
-    pass
-
+    return list(filter(lambda elemento: isinstance(elemento, int), lista_mixta))
 
 if __name__ == "__main__":
     print("#1", frecuencia_letras("Hola mundo"))
