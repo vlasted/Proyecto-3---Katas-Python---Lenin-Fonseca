@@ -6,10 +6,10 @@
 - Hay dos errores a controlar:
   - `ValueError` si el usuario escribe texto
   - `ZeroDivisionError` si divide entre 0
-- Mejor probarlo manualmente, no dejarlo ejecutándose siempre al correr el archivo.
+- Mejor probarlo manualmente.
 
 ## Ejercicio 10
-- Aquí aparece la excepción personalizada.
+- Excepción personalizada
 - `ListaVaciaError` hereda de `Exception`.
 - Se usa `raise ListaVaciaError(...)` cuando la lista está vacía.
 - Luego se puede manejar con `try/except` al probar la función.
@@ -25,6 +25,28 @@
 - Luego se transforma cada letra en una tupla:
   - mayúscula
   - minúscula
+
+## Ejercicio 16
+- Se usa `filter()` para quedarnos solo con las palabras cuya longitud sea mayor que `n`.
+- Primero se separa el texto con `split()`.
+
+## Ejercicio 17
+- Usa `reduce()`.
+- La lógica es ir construyendo el número así:
+  - acumulado * 10 + dígito
+
+## Ejercicio 18
+- Se usa `filter()` sobre una lista de diccionarios.
+- La condición es que `calificacion >= 90`.
+- Hay que acceder a la clave del diccionario correctamente.
+
+## Ejercicio 19
+- Es una lambda que filtra impares.
+- Un número es impar si `numero % 2 != 0`.
+
+## Ejercicio 20
+- Se usa `isinstance(elemento, int)` para comprobar si un valor es entero.
+- La lista puede mezclar strings, floats y enteros.
 
 ## Recordatorio general
 - Los `print` de prueba van al final, dentro de `if __name__ == "__main__":`
