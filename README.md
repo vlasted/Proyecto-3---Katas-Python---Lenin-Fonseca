@@ -15,7 +15,7 @@ Este proyecto incluye la resolución de distintas katas de Python para practicar
 - buenas prácticas
 
 ## Estructura
-- `katas_python.py`: archivo principal con los ejercicios resueltos y comentados.
+- `katas_python.ipynb`: archivo principal con los ejercicios resueltos y comentados.
 
 ## Autor
 Lenin Fonseca
